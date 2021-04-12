@@ -19,17 +19,8 @@ const profileSchema = new Schema({
   lastName: {
     type: String,
   },
-  creditCardNumber: {
+  email: {
     type: String,
-    defualt: '4242 4242 4242 4242',
-  },
-  creditCardCVC: {
-    type: String,
-    defualt: '123',
-  },
-  creditCardValidity: {
-    type: String,
-    defualt: '04/20/2021',
   },
 });
 
