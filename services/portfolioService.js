@@ -1,7 +1,4 @@
-const mongoose = require('mongoose');
 const Portfolio = require('../models/Portfolio');
-const User = require('../models/User');
-const transactionService = require('./transactionService');
 
 function create(userId) {
   return new Portfolio({ creator: userId, transactions: [] }).save();

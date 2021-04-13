@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const CoinTransaction = require('../models/CoinTransaction');
 
 function create(portfolioId, data) {

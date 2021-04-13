@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
 const Profile = require('../models/Profile');
 
 function createProfile(userId, data) {
-  return new Profile({ user: userId, data }).save();
+  console.log('id', userId);
+  return new Profile({ user: userId, ...data }).save();
 }
 
 function getProfile(userId) {

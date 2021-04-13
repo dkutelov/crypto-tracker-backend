@@ -6,7 +6,7 @@ const portfolioService = require('../services/portfolioService');
 const transactionService = require('../services/transactionService');
 
 router.get('/', isAuth, (req, res) => {
-  const userId = req.query.id;
+  const userId = req.user._id;
   portfolioService.findOneById(userId).then((portfolio) => {
     res.status(200).json(portfolio);
   });
@@ -33,15 +33,7 @@ router.post('/', isAuth, (req, res) => {
 });
 
 router.put('/', isAuth, (req, res) => {
-  const {
-    _id,
-    type,
-    coinId,
-    amount,
-    price,
-    portfolioId,
-    application,
-  } = req.body;
+  const { _id, type, coinId, amount, price, application } = req.body;
 
   const updatedTransaction = {
     type,
@@ -60,7 +52,7 @@ router.put('/', isAuth, (req, res) => {
 
 router.delete('/', isAuth, (req, res) => {
   const transactionId = req.query.id;
-  const userId = req.user.id;
+  const userId = req.user._id;
 
   transactionService.deleteOne(transactionId).then((transaction) => {
     portfolioService.deleteTransaction(userId, transactionId).then(() => {
