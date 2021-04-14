@@ -1,7 +1,6 @@
 const Profile = require('../models/Profile');
 
 function createProfile(userId, data) {
-  console.log('id', userId);
   return new Profile({ user: userId, ...data }).save();
 }
 

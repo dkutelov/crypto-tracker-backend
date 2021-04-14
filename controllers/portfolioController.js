@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const Portfolio = require('../models/Portfolio');
 
 const { isAuth } = require('../middlewares/auth');
 const portfolioService = require('../services/portfolioService');
