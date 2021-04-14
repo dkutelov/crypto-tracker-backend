@@ -10,12 +10,12 @@ function getProfile(userId) {
 }
 
 function updateProfile(profileId, userId, data) {
-  return Profile.updateOne(
+  return Profile.findByIdAndUpdate(
+    profileId,
     {
-      _id: profileId,
+      ...data,
       user: userId,
     },
-    data,
     { new: true }
   );
 }

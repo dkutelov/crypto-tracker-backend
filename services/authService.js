@@ -12,7 +12,7 @@ const register = async (username, password) => {
 
   let token = jwt.sign(
     {
-      id: createdUser._id,
+      _id: createdUser._id,
       username: createdUser.username,
     },
     SECRET,
@@ -34,6 +34,7 @@ const login = async (username, password) => {
   let token = jwt.sign({ _id: user._id, username: user.username }, SECRET, {
     expiresIn: '1h',
   });
+
   return {
     id: user._id,
     username: user.username,

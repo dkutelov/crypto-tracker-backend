@@ -9,9 +9,10 @@ router.post('/register', (req, res, next) => {
 
   authService
     .register(username, password)
-    .then((createdUser) => {
-      portfolioService.create(createdUser.id).then((profile) => {
-        res.status(201).json(createdUser);
+    .then((user) => {
+      portfolioService.create(user.id).then((profile) => {
+        console.log();
+        res.status(201).json(user);
       });
     })
     .catch((err) => {
