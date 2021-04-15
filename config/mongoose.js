@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const { DB_URI } = require('./config');
+//const { DB_URI } = require('./config');
+
+const DB_URI = process.env.DB_URI;
 
 module.exports = () => {
   mongoose.connect(DB_URI, {

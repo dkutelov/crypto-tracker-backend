@@ -1,6 +1,6 @@
 const { Schema, Types, model } = require('mongoose');
 const bcrypt = require('bcryptjs');
-const { SALT_ROUNDS } = require('../config/config');
+const SALT_ROUNDS = 10;
 const ENGLISH_ALPHANUMERIC_PATTERN = /^[a-zA-Z0-9]+$/;
 const PASSWORD_PATTERN = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
 

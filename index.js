@@ -2,7 +2,7 @@ const app = require('express')();
 
 require('./config/mongoose')();
 require('./config/express')(app);
-const { PORT } = require('./config/config');
+const PORT = 4000;
 const routes = require('./routes');
 const errorHandler = require('./middlewares/errorHandler');
 
